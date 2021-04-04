@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"module": "none",
+		"skipLibCheck": true,
+		"target": "esnext",
+		"moduleResolution": "Node",
+		"allowJs": true,
+		"jsx": "preserve",
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "./",
+		"rootDir": "./webapp",
+        "types": ["@sapui5/ts-types"],
+		"paths": {
+			"sap/ui/demo/todo/*" : [
+				"./webapp/*"
+			]
+		},
+		"outDir": "./serve"
+		
+	},
+	"include": ["webapp/**/*", "./node_modules/@ui5-next/types/bin/index.d.ts"],
+}

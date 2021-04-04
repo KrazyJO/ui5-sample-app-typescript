@@ -9,6 +9,13 @@ module.exports = function(config) {
 
 		frameworks: ["ui5"],
 
+		ui5: {
+			type: "application",
+			paths: {
+				webapp: "serve"
+			  }
+		},
+
 		browsers: ["CustomChrome"],
 
 		browserConsoleLogOptions: {

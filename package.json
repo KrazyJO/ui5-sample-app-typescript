@@ -14,15 +14,29 @@
 		"build-self-contained": "ui5 build self-contained -a --clean-dest",
 		"serve-dist": "ws --compress -d dist"
 	},
-	"dependencies": {},
 	"devDependencies": {
+		"@babel/core": "^7.13.14",
+		"@babel/preset-env": "^7.13.12",
+		"@babel/preset-typescript": "^7.13.0",
+		"@sapui5/ts-types": "^1.87.2",
 		"@ui5/cli": "^2.10.2",
+		"babel-preset-transform-ui5": "^7.0.3",
+		"browser-sync": "^2.26.14",
 		"eslint": "^7.23.0",
+		"gulp": "^4.0.2",
+		"gulp-babel": "^8.0.0",
+		"gulp-clean": "^0.4.0",
+		"gulp-serve": "^1.4.0",
 		"karma": "^6.3.1",
+		"karma-babel-preprocessor": "^8.0.1",
 		"karma-chrome-launcher": "^3.1.0",
 		"karma-coverage": "^2.0.3",
 		"karma-ui5": "^2.3.3",
 		"local-web-server": "^4.2.1",
-		"rimraf": "^3.0.2"
+		"rimraf": "^3.0.2",
+		"typescript": "^4.2.3"
+	},
+	"dependencies": {
+		"@ui5-next/types": "^1.4.20"
 	}
 }
