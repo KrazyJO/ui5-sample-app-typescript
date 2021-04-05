@@ -35,7 +35,8 @@
 		"karma-ui5": "^2.3.3",
 		"local-web-server": "^4.2.1",
 		"rimraf": "^3.0.2",
-		"typescript": "^4.2.3"
+		"typescript": "^4.2.3",
+		"ui5-jsx": "^0.1.0"
 	},
 	"dependencies": {
 		"@ui5-next/types": "^1.4.20"

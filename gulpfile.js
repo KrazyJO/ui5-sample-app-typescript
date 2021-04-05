@@ -20,16 +20,6 @@ const babelFiles = [
     `${SRC}/**/*.tsx`
 ];
 
-// presets: [
-//     '@babel/env',
-//     ["transform-ui5", {
-//         "namespacePrefix": "easy.app",
-//         "noImportInteropPrefixes": ["sap/", "easy/app/"],
-//         "onlyConvertNamedClass": true
-//     }],
-//     "@babel/preset-typescript"],
-// plugins: ["module:spet-ui5-jsx-rm", "@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-optional-chaining"]
-
 const babelConfig = {
     presets: [
         '@babel/env',
@@ -40,7 +30,7 @@ const babelConfig = {
         }],
         "@babel/preset-typescript"
     ],
-    plugins: ["@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-optional-chaining"]
+    plugins: ["module:ui5-jsx", "@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-optional-chaining"]
 };
 
 function cleanServe(cb) {

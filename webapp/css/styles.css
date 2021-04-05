@@ -2,3 +2,19 @@
 li[data-todo-item-completed="true"] span {
 	text-decoration: line-through;
 }
+
+.tsx-sample-control {
+	display: flex;
+	user-select: none;
+}
+.tsx-sample-control-text {
+	font-family: 'Courier New', Courier, monospace;
+}
+.tsx-sample-control-shape {
+	width: 17px;
+	height: 17px;
+	margin-left: 10px;
+}
+.tsx-sample-control-text span {
+	cursor: pointer;
+}

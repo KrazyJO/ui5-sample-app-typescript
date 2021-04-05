@@ -1,3 +1,8 @@
+# Typescript + JSX
+This project was created to have a simple showcase of using UI5 with Typescript + JSX
+
+Just run `npx gulp serve`. You can click on the SampleControl (Shape, Color is clickable to show rendering).
+
 ![OpenUI5 logo](http://openui5.org/images/OpenUI5_new_big_side.png)
 
 # openui5-sample-app
