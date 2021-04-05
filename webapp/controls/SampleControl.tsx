@@ -1,12 +1,12 @@
 import Control from "sap/ui/core/Control";
 
-export enum Colors {
+export enum colors {
     green = "green",
     red = "red",
     blue = "blue"
 }
 
-export enum Shape {
+export enum shapes {
     circle = "circle",
     square = "square"
 }
@@ -14,43 +14,33 @@ export enum Shape {
 /**@name sap.ui.demo.todo.controls.SampleControl */
 class SampleControl extends Control {
 
-    private colorGenerator = function* () {
-        const len = Object.keys(Colors).length;
-        let i = 0;
-        while(true) {
-            if (i === len) i = 0;
+    private makeGenerator<T>(obj: any) {
+        return function* (): Generator<T> {
+            const len = Object.keys(obj).length;
+            let i = 0;
+            while(true) {
+                if (i === len) i = 0;
 
-            yield Object.keys(Colors)[i];
-            i++
-        }
-    }();
+                yield Object.keys(obj)[i] as unknown as T;
+                i++
+            }
+        }();
+    }
 
-    private shapeGenerator = function* () {
-        const len = Object.keys(Shape).length;
-        let i = 0;
-        while(true) {
-            if (i === len) i = 0;
-
-            yield Object.keys(Shape)[i];
-            i++
-        }
-    }();
+    private shapeGenerator = this.makeGenerator<shapes>(shapes);
+    private colorGenerator = this.makeGenerator<colors>(colors);
 
     static metadata = {
         properties: {
-            color: {type: "string", defaultValue: Colors.blue},
-            shape: {type: "string", defaultValue: Shape.square}
-        },
-        events: {
-            chooseShape: {},
-            chooseColor: {}
+            color: {type: "string", defaultValue: colors.blue},
+            shape: {type: "string", defaultValue: shapes.square}
         }
     }
 
-    getColor: () => Colors;
+    getColor: () => colors;
     setColor: (color: String) => void;
-    getShape: () => Shape;
-    setShape: (shape: Shape) => void;
+    getShape: () => shapes;
+    setShape: (shape: shapes) => void;
 
     onclick(evt: Event) {
         const target = evt.target as HTMLElement;
@@ -67,12 +57,12 @@ class SampleControl extends Control {
     }
 
     private nextShape() {
-        const nextShape = this.shapeGenerator.next().value as Shape;
+        const nextShape = this.shapeGenerator.next().value;
         this.setShape(nextShape);
     }
 
     private getBorderRadius() {
-        return this.getShape() === Shape.circle ? "100%" : "0px";
+        return this.getShape() === shapes.circle ? "100%" : "0px";
     }
 
     static renderer = {
